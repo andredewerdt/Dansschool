@@ -3,7 +3,7 @@ var menu = new nw.Menu({type: 'menubar'});
 
 // Create a submenu as the 2nd level menu
 var submenu = new nw.Menu();
-submenu.append(new nw.MenuItem({ label: 'Zoeken' }));
+submenu.append(new nw.MenuItem({ label: 'Zoeken', click: function (){zoek();} }));
 submenu.append(new nw.MenuItem({ type: 'separator'}));
 submenu.append(new nw.MenuItem({ label: 'Presentielijst' }));
 submenu.append(new nw.MenuItem({ label: 'Absentielijst' }));
@@ -11,6 +11,18 @@ submenu.append(new nw.MenuItem({ label: 'Absentielijst' }));
 // Create and append the 1st level menu to the menubar
 menu.append(new nw.MenuItem({
   label: 'Ledenadministratie',
+  submenu: submenu
+}));
+
+var submenu = new nw.Menu();
+submenu.append(new nw.MenuItem({ label: 'Presentielijst' }));
+submenu.append(new nw.MenuItem({ label: 'Fotolijst' }));
+submenu.append(new nw.MenuItem({ type: 'separator'}));
+submenu.append(new nw.MenuItem({ label: 'Nieuwe inschrijvingen' }));
+submenu.append(new nw.MenuItem({ label: 'Afdansen' }));
+
+menu.append(new nw.MenuItem({
+  label: 'Cursus',
   submenu: submenu
 }));
 

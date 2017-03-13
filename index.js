@@ -17,29 +17,20 @@ var pool  = mysql.createPool({
 
 pool.getConnection(function(err, connection) {
   // Use the connection
-  connection.query('SELECT naam,partner FROM naw limit 1', function (error, results, fields) {
+  connection.query('SELECT naam,partner FROM naw limit 2', function (error, results, fields) {
     // And done with the connection.
     //console.log(results);
     //alert(results);
      for (el in results) {
-       document.write(results[el].naam+'<br/>');
-       document.write(results[el].partner+'<br />');
+      document.getElementById("data").innerHTML =document.getElementById("data").innerHTML+results[el].naam+'<br/>'+ results[el].partner+'<br/>';
      }
     //document.write(results);
     connection.release();
 
     // Handle error after the release.
     if (error) throw error;
-
     // Don't use the connection here, it has been returned to the pool.
   });
 });
-// connection.connect()//win.showDevTools();
-;
-//
-// connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-//   if (error) throw error;
-//   console.log('The solution is: ', results[0].solution);
-// });
-
 //connection.end();
+alert('test3');
