@@ -33,4 +33,3 @@ pool.getConnection(function(err, connection) {
   });
 });
 //connection.end();
-alert('test3');

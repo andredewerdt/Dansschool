@@ -5,7 +5,7 @@ var menu = new nw.Menu({type: 'menubar'});
 var submenu = new nw.Menu();
 submenu.append(new nw.MenuItem({ label: 'Zoeken', click: function (){zoek();} }));
 submenu.append(new nw.MenuItem({ type: 'separator'}));
-submenu.append(new nw.MenuItem({ label: 'Presentielijst' }));
+submenu.append(new nw.MenuItem({ label: 'Presentielijst', click: function (){presentie();} }));
 submenu.append(new nw.MenuItem({ label: 'Absentielijst' }));
 
 // Create and append the 1st level menu to the menubar
